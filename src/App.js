@@ -1,25 +1,15 @@
-import React,{ useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {getData} from './reducers/actions'
+import React from 'react';
 import Post from './post'
+import Blog from './blog';
 
 import './App.css';
 
 function App() {
-  const posts = useSelector(state => state.post);
-  const dispatch = useDispatch();
-
-  useEffect(()=>{
-      dispatch(getData());
-  },[dispatch]);
-
 
   return (
     <div className="">
     <div>
-     <ul>{posts.map((el,index)=>(
-       <li key={index}>{el.title}:{el.body}</li>)
-       )}</ul>
+     <Blog />
     </div>
 
     <div>
